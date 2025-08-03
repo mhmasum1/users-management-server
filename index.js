@@ -1,11 +1,16 @@
 const express = require("express");
+const cors = require('cors');
 const app = express();
 const port = process.env.PORT || 5000;
 
+// middleware
+app.use(cors());
+
 const users = [
     { id: 1, name: "Sabana", email: 'sabana@gmail.com' },
-    { id: 1, name: "Sabnur", email: 'sabnur@gmail.com' },
-    { id: 1, name: "Sabila", email: 'sabila@gmail.com' }
+    { id: 2, name: "Sabnur", email: 'sabnur@gmail.com' },
+    { id: 3, name: "Sabila", email: 'sabila@gmail.com' },
+    { id: 4, name: "Hiya", email: 'hiya@gmail.com' },
 ]
 app.get('/', (req, res) => {
     res.send('Users management server is running')
